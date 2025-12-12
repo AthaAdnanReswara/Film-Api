@@ -31,7 +31,7 @@ class AdminFilmController extends Controller
             'judul'        => 'required|string|max:255',
             'deskripsi'    => 'nullable|string',
             'slug'         => 'nullable|string|max:255|unique:films,slug',
-            'kategori_id'  => 'required|exists:categories,id',
+            'category_id'  => 'required|exists:categories,id',
 
             // File upload
             'poster'       => 'required|file|mimes:jpg,jpeg,png,webp|max:2048',
@@ -65,9 +65,9 @@ class AdminFilmController extends Controller
             'judul'        => $data['judul'],
             'slug'         => $data['slug'],
             'deskripsi'    => $data['deskripsi'] ?? null,
-            'kategori_id'  => $data['kategori_id'],
+            'category_id'  => $data['category_id'],
             'poster'       => $posterPath,
-            'video_url'    => $videoPath,
+            'vidio_url'    => $videoPath,
             'tahun'        => $data['tahun'] ?? null,
             'durasi'       => $data['durasi'] ?? null,
             'rating'       => $data['rating'] ?? 0,
